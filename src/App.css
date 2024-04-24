@@ -1,0 +1,42 @@
+/* Define the keyframes for the pulsing animation */
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes pulse2 {
+  0% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.125);
+  }
+  100% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+}
+
+/* Apply the animation to the text */
+.pulsing-05s {
+  animation: pulse2 0.5s infinite !important;
+}
+.pulsing-1s {
+  animation: pulse 1s infinite !important;
+}
+
+.daita-gradient {
+  background: radial-gradient(#2d4130, #191919);
+}
