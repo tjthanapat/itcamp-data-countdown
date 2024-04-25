@@ -4,7 +4,6 @@ import './App.css';
 import '@fontsource/prompt/400.css';
 import '@fontsource/prompt/500.css';
 import '@fontsource/prompt/600.css';
-import 'animate.css';
 
 import daitaLogo from './assets/daita.svg';
 
@@ -80,7 +79,7 @@ const App = () => {
                 <br />
                 ตัวอย่าง:{' '}
                 <span className="bg-gray-700 font-[monospace] text-white p-1 rounded-md">
-                  /?seconds=300
+                  /?seconds=30
                 </span>
               </p>
               <p>
@@ -97,13 +96,6 @@ const App = () => {
             </div>
           )}
         </div>
-      </div>
-      <div className="hidden">
-        2 params available for this page: <br />
-        /?seconds={'{seconds:int}'} example: /?seconds=300 <br />
-        /?datetime={'{datetime:int}'} example: /?datetime=2024-04-25%2016:00:00
-        for Apr 25, 2024 16:00:00 <br />
-        datetime will be used if provided with both params together.
       </div>
     </>
   );
