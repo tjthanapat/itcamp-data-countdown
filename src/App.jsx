@@ -1,42 +1,86 @@
-import { useState } from 'react';
 import Countdown, { zeroPad } from 'react-countdown';
 import './App.css';
-import '@fontsource/prompt/400.css';
-import '@fontsource/prompt/500.css';
-import '@fontsource/prompt/600.css';
 
+import CountdownGenerator from './CountdownGenerator';
 import daitaLogo from './assets/daita.svg';
+
+const NumberDisplay = ({ number, pulsing }) => {
+  return (
+    <p
+      className={
+        'font-medium text-[240px] -mb-[64px]' +
+        (!!pulsing ? ' text-red-500 ' + pulsing : ' text-white')
+      }
+    >
+      {zeroPad(number)}
+    </p>
+  );
+};
+
+const UnitDisplay = ({ unit, pulsing }) => {
+  return (
+    <p
+      className={'text-[64px]' + (!!pulsing ? ' text-red-500' : ' text-white')}
+    >
+      {unit}
+    </p>
+  );
+};
+
+const CountdownDisplay = ({ hours, minutes, seconds, pulsing }) => {
+  return (
+    <div className="grid grid-cols-3 w-screen p-[128px]">
+      <div>
+        <NumberDisplay number={hours} pulsing={pulsing} />
+        <UnitDisplay unit="ชั่วโมง" pulsing={pulsing} />
+      </div>
+      <div>
+        <NumberDisplay number={minutes} pulsing={pulsing} />
+        <UnitDisplay unit="นาที" pulsing={pulsing} />
+      </div>
+      <div>
+        <NumberDisplay number={seconds} pulsing={pulsing} />
+        <UnitDisplay unit="วินาที" pulsing={pulsing} />
+      </div>
+    </div>
+  );
+};
 
 const renderer = ({ hours, minutes, seconds, completed }) => {
   if (completed) {
     // Render a completed state
     return (
       <p className="font-medium text-white pulsing-1s">
-        <span className="text-[200px]">หมดเวลา!</span>
+        <span className="text-[240px]">หมดเวลา!</span>
         {/* <br />
         <span className="text-[42px]">เก่งมากทุกคน</span> */}
       </p>
     );
   } else {
     // Render a countdown
-    const thresh_seconds = 30;
-    if (hours == 0 && minutes == 0 && seconds <= thresh_seconds) {
+    const thresh_red_plusing_seconds = 30;
+    const thresh_red_seconds = 10 * 60;
+    if (hours == 0 && minutes == 0 && seconds <= thresh_red_plusing_seconds) {
       return (
-        <p className="font-medium text-[200px] text-red-500 pulsing-05s">
-          {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
-        </p>
+        <CountdownDisplay
+          hours={hours}
+          minutes={minutes}
+          seconds={seconds}
+          pulsing="pulsing-05s"
+        />
       );
     } else if (hours == 0 && minutes == 0 && seconds >= thresh_seconds) {
       return (
-        <p className="font-medium text-[200px] text-red-500 pulsing-1s">
-          {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
-        </p>
+        <CountdownDisplay
+          hours={hours}
+          minutes={minutes}
+          seconds={seconds}
+          pulsing="pulsing-1s"
+        />
       );
     }
     return (
-      <p className="font-medium text-[200px] text-white">
-        {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
-      </p>
+      <CountdownDisplay hours={hours} minutes={minutes} seconds={seconds} />
     );
   }
 };
@@ -64,36 +108,11 @@ const App = () => {
             alt="Daita logo"
           />
         </div>
-        <div className="absolute flex flex-col justify-center items-center h-screen text-center p-5">
+        <div className="absolute flex flex-col justify-center items-center h-screen text-center">
           {!!deadline ? (
             <Countdown date={deadline} renderer={renderer} />
           ) : (
-            <div className="max-w-sm bg-white rounded-xl p-5 text-left">
-              <p className='text-center'>ต้องใส่ parameter ใน url ตัวใดตัวหนึ่ง!</p>
-              
-              <p className='my-5'>
-                <span className="bg-gray-700 font-[monospace] text-white p-1 rounded-md">
-                  seconds
-                </span>{' '}
-                นับถอยหลัง n วินาที
-                <br />
-                ตัวอย่าง:{' '}
-                <span className="bg-gray-700 font-[monospace] text-white p-1 rounded-md">
-                  /?seconds=30
-                </span>
-              </p>
-              <p>
-                <span className="bg-gray-700 font-[monospace] text-white p-1 rounded-md">
-                  datetime
-                </span>{' '}
-                นับถอยหลังถึงเวลาที่กำหนด
-                <br />
-                ตัวอย่าง:{' '}
-                <span className="bg-gray-700 font-[monospace] text-white p-1 rounded-md">
-                /?datetime=2024-04-25<span className='text-red-500'>%20</span>16:00:00
-                </span> สำหรับนับถอยหลังจนถึง Apr 25, 2024 16:00:00
-              </p>
-            </div>
+            <CountdownGenerator />
           )}
         </div>
       </div>
