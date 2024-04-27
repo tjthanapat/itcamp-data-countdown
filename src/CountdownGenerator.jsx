@@ -14,6 +14,8 @@ const CountdownGenerator = () => {
     setDatetime(value);
   };
 
+  const url = window.location.origin + window.location.pathname
+
   return (
     <div className="max-w-sm bg-white rounded-xl p-5 text-left font-light">
       <div>
@@ -29,7 +31,7 @@ const CountdownGenerator = () => {
               addonAfter="วินาที"
               className="block w-full mt-3 mb-2"
             />
-            <a href={`/?seconds=${seconds}`}>
+            <a href={`${url}?seconds=${seconds}`}>
               <Button
                 className="w-full"
                 type="primary"
@@ -50,7 +52,7 @@ const CountdownGenerator = () => {
               className="block w-full mt-3 mb-2"
             />
             {!!datetime ? (
-              <a href={`/?datetime=${datetime.format('YYYY-MM-DD HH:mm:ss')}`}>
+              <a href={`${url}?datetime=${datetime.format('YYYY-MM-DD HH:mm:ss')}`}>
                 <Button className="w-full" type="primary" htmlType="button">
                   เริ่ม
                 </Button>
