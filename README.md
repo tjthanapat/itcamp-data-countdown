@@ -1,8 +1,15 @@
-# React + Vite
+# ITCAMP20 Daita Countdown
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ตัวนับถอยหลังเวลาของค่าย Daita ITCAMP20
 
-Currently, two official plugins are available:
+# วิธี deploy เป็น static ลง GitHub page
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. เปลี่ยน `itcamp20-daita-countdown` เป็นชื่อ repo ของตัวเองในไฟล์ `vite.config.js`
+```
+export default defineConfig({
+  plugins: [react()],
+  base: '/itcamp20-daita-countdown/'
+})
+```
+2. รันคำสั่ง `pnpm build`
+3. รันคำสั่ง `pnpm run deploy`
