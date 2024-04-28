@@ -52,8 +52,6 @@ const renderer = ({ hours, minutes, seconds, completed }) => {
     return (
       <p className="font-medium text-white pulsing-1s">
         <span className="text-[240px]">หมดเวลา!</span>
-        {/* <br />
-        <span className="text-[42px]">เก่งมากทุกคน</span> */}
       </p>
     );
   } else {
