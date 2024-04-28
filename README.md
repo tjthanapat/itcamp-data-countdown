@@ -1,6 +1,9 @@
 # ITCAMP20 Daita Countdown
 
-ตัวนับถอยหลังเวลาของค่าย Daita ITCAMP20
+ตัวนับถอยหลังเวลาของค่าย Daita ITCAMP20 
+
+ใช้คำสั่ง `pnpm dev` เพื่อรันดูตัวอย่างบนเครื่อง local
+
 
 # วิธี deploy เป็น static ลง GitHub page
 
