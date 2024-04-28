@@ -2,8 +2,11 @@
 
 ตัวนับถอยหลังเวลาของค่าย Daita ITCAMP20 
 
-ใช้คำสั่ง `pnpm dev` เพื่อรันดูตัวอย่างบนเครื่อง local
+ไปหน้า Countdown: [https://tjthanapat.github.io/itcamp20-daita-countdown/](https://tjthanapat.github.io/itcamp20-daita-countdown/)
 
+# วิธี run server บน local
+
+ใช้คำสั่ง `pnpm dev` เพื่อรันดูตัวอย่างบนเครื่อง local
 
 # วิธี deploy เป็น static ลง GitHub page
 
