@@ -1,8 +1,11 @@
 import Countdown, { zeroPad } from 'react-countdown';
 import './App.css';
+import '@fontsource/prompt/300.css';
+import '@fontsource/prompt/400.css';
+import '@fontsource/prompt/500.css';
 
 import CountdownGenerator from './CountdownGenerator';
-import daitaLogo from './assets/daita.svg';
+import dataCampLogo from './assets/datamarine.png';
 
 const NumberDisplay = ({ number, pulsing }) => {
   return (
@@ -101,9 +104,9 @@ const App = () => {
       <div className="daita-gradient relative flex flex-col justify-center items-center h-screen">
         <div className="absolute flex flex-col justify-center items-center h-screen">
           <img
-            src={daitaLogo}
+            src={dataCampLogo}
             className="logo w-[600px] opacity-30"
-            alt="Daita logo"
+            alt="Data Camp logo"
           />
         </div>
         <div className="absolute flex flex-col justify-center items-center h-screen text-center">

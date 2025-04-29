@@ -11,7 +11,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@fontsource/prompt": "^5.0.14",
+    "@fontsource/prompt": "^5.2.5",
     "antd": "^5.16.4",
     "dayjs": "^1.11.10",
     "react": "^18.2.0",

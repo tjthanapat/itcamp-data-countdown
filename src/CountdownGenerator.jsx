@@ -73,24 +73,24 @@ const CountdownGenerator = () => {
       </div>
       <div>
         <p className="my-5">
-          <span className="bg-gray-700 font-[monospace] text-white p-1 rounded-md">
+          <span className="bg-gray-700 text-white p-1 rounded-md">
             seconds
           </span>{' '}
           นับถอยหลัง n วินาที
           <br />
           ตัวอย่าง:{' '}
-          <span className="bg-gray-700 font-[monospace] text-white p-1 rounded-md">
+          <span className="bg-gray-700 text-white p-1 rounded-md">
             /?seconds=30
           </span>
         </p>
         <p>
-          <span className="bg-gray-700 font-[monospace] text-white p-1 rounded-md">
+          <span className="bg-gray-700 text-white p-1 rounded-md">
             datetime
           </span>{' '}
           นับถอยหลังถึงเวลาที่กำหนด
           <br />
           ตัวอย่าง:{' '}
-          <span className="bg-gray-700 font-[monospace] text-white p-1 rounded-md">
+          <span className="bg-gray-700 text-white p-1 rounded-md">
             /?datetime=2024-04-25<span className="text-red-500">%20</span>
             16:00:00
           </span>{' '}
