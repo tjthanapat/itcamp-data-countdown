@@ -1,8 +1,8 @@
-# ITCAMP20 Daita Countdown
+# ITCAMP Data Countdown
 
-ตัวนับถอยหลังเวลาของค่าย Daita ITCAMP20 
+ตัวนับถอยหลังเวลาของค่าย Data ITCAMP, KMITL
 
-ไปหน้า Countdown: [https://tjthanapat.github.io/itcamp20-daita-countdown/](https://tjthanapat.github.io/itcamp20-daita-countdown/)
+ไปหน้า Countdown: [https://tjthanapat.github.io/itcamp-data-countdown/](https://tjthanapat.github.io/itcamp-data-countdown/)
 
 # วิธี run server บน local
 
@@ -10,11 +10,11 @@
 
 # วิธี deploy เป็น static ลง GitHub page
 
-1. เปลี่ยน `itcamp20-daita-countdown` เป็นชื่อ repo ของตัวเองในไฟล์ `vite.config.js`
+1. เปลี่ยน `itcamp-data-countdown` เป็นชื่อ repo ของตัวเองในไฟล์ `vite.config.js`
 ```
 export default defineConfig({
   plugins: [react()],
-  base: '/itcamp20-daita-countdown/'
+  base: '/itcamp-data-countdown/'
 })
 ```
 2. รันคำสั่ง `pnpm build`
